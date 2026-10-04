@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChAp-ChAp</title>
+    
+    <!-- Google Fonts: Inter (Highly legible geometric sans-serif) -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- RESET & GLOBAL STYLES --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a; /* WCAG AAA Contrast against white background */
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Keyboard Focus Indicator Style */
+        *:focus-visible {
+            outline: 3px dashed #2563eb;
+            outline-offset: 4px;
+        }
+
+        /* --- HERO CONTAINER --- */
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            background-color: #0f172a; /* Dark background fallback */
+            /* High-performance background image with dark overlay mix-blend */
+            background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), 
+                              url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        /* --- TYPOGRAPHY STYLING --- */
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #60a5fa; /* Crisp blue contrast over dark blue background */
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem); /* Responsive typography */
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: clamp(1.125rem, 2vw, 1.25rem);
+            line-height: 1.6;
+            color: #e2e8f0; /* Off-white ensures long-form reading comfort */
+            max-width: 650px; /* Limits characters per line for high readability */
+            margin: 0 auto 2.5rem auto;
+        }
+
+        /* --- BUTTONS & INTERACTIVE ELEMENTS --- */
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 0.375rem;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            
+            /* Strict Fitts' Law Rule: Generous sizing for precise touch targeting */
+            min-height: 48px; 
+            padding: 0 1.75rem;
+        }
+
+        .btn-primary {
+            background-color: #2563eb;
+            color: #ffffff;
+            border: 2px solid #2563eb;
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            border-color: #1d4ed8;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- ACCESSIBLE ICON SYSTEM --- */
+        .btn-icon {
+            margin-left: 0.5rem; /* Strict rule: deliberate spacing near text labels */
+            flex-shrink: 0;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main landmark layout structural tag for screen readers -->
+    <main>
+        <section class="hero" aria-label="Introduction Header">
+            <div class="hero-content">
+                <span class="hero-tag">About ChAp-ChAp</span>
+                <h1 class="hero-title">Your Ideas Made Professionally</h1>
+                <p class="hero-description">
+                    Premium quality Services made at an affordable prices and on time.
+                </p>
+                
+                <div class="cta-group">
+                    <!-- Primary Call To Action Button -->
+                    <a href="#get-started" class="btn btn-primary">
+                        Get Started Today
+                        <!-- SVG Icon marked aria-hidden because the text provides total meaning -->
+                        <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+
+                    <!-- Secondary Call To Action Button -->
+                    <a href="#documentation" class="btn btn-secondary" aria-label="Read our documentation to learn more about the code framework">
+                        View Our Prices
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
